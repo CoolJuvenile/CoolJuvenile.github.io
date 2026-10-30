@@ -27350,3 +27350,22 @@ div#runtime {
   transform: translateY(-100%);
 }
 
+
+/* 单个收款码时居中显示 */
+.reward-all .reward-group{justify-content:center}
+
+/* ===== 鼠标点击心形特效 ===== */
+.cursor-fx-heart {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  animation: cursor-fx-heart 1s ease-out forwards;
+}
+@keyframes cursor-fx-heart {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.4); }
+  25%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot)); }
+}

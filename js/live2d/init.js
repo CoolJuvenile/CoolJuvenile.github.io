@@ -1,7 +1,7 @@
 /**
  * 看板娘（Live2D）初始化
  * 运行时：l2d-widget（MIT）https://github.com/hacxy/l2d-widget
- * 模型：Mao（Cubism 3/4）、Hijiki（Cubism 2），版权归原作者，仅供个人站点非商业使用
+ * 模型：terisa（德丽莎，Cubism 2）、Hijiki（小黑猫，Cubism 2），版权归原作者，仅供个人站点非商业使用
  */
 (function () {
   if (window.__l2dBooted) return
@@ -38,7 +38,7 @@
       window.l2dWidget = L2D_WIDGET.createWidget({
         model: [
           {
-            path: '/js/live2d/models/Mao/Mao.model3.json',
+            path: '/js/live2d/models/terisa/model.json',
             scale: 1,
             tips: copyTips()
           },

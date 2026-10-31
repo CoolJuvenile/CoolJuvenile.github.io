@@ -27369,3 +27369,26 @@ div#runtime {
   25%  { opacity: 1; }
   100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot)); }
 }
+
+/* ===== 音乐播放器避让看板娘 + 酷安图标 ===== */
+
+/* 看板娘占住了左下角，播放器挪到右下角（中控台打开时保持主题原本的居中样式） */
+body:not(:has(#console.show)) #nav-music {
+  left: auto;
+  right: 20px;
+}
+
+/* 酷安：图标库里没有，用 SVG mask 自己画一个 */
+.anzhiyu-icon-coolapk::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background: currentColor;
+  -webkit-mask: var(--coolapk-glyph) no-repeat center / contain;
+  mask: var(--coolapk-glyph) no-repeat center / contain;
+}
+.anzhiyu-icon-coolapk {
+  --coolapk-glyph: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h8V4H8zm2 14h4a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2z'/></svg>");
+}
